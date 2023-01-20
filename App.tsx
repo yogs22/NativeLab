@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Text, View, Image, TextInput} from 'react-native';
 
 const App = () => {
@@ -9,6 +9,7 @@ const App = () => {
       <Other />
       <Photo />
       <TextInput style={{borderWidth: 1}} />
+      <BoxGreen />
     </View>
   );
 };
@@ -25,5 +26,19 @@ const Photo = () => {
     />
   );
 };
+
+class BoxGreen extends Component {
+  render() {
+    return (
+      <View>
+        <Text style={{color: 'blue', fontSize: 24}}>Ini Component</Text>
+        <Image
+          source={{uri: 'https://placeimg.com/100/100/any'}}
+          style={{width: 100, height: 100}}
+        />
+      </View>
+    );
+  }
+}
 
 export default App;
