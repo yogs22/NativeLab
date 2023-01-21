@@ -1,12 +1,12 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
 import React from 'react';
-import imageml from './pp-ml.jpg';
+import mlimage from '../../assets/image/pp-ml.jpg';
 
-export default function PositionComponent() {
+export default function Position() {
   return (
     <View style={styles.wrapper}>
       <View style={styles.cartWrapper}>
-        <Image source={imageml} style={styles.iconCart} />
+        <Image source={mlimage} style={styles.iconCart} />
         <Text style={styles.notif}>10</Text>
       </View>
       <Text style={styles.text}>Checkout</Text>

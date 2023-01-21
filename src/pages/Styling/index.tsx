@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
-import mlimage from './pp-ml.jpg';
+import mlimage from '../../assets/image/pp-ml.jpg';
 
-const StylingComponent = () => {
+const Styling = () => {
   return (
     <View>
       <Text style={styles.text}>Styling Component</Text>
@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default StylingComponent;
+export default Styling;

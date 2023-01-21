@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {View, Text, ScrollView, Image} from 'react-native';
-import mlimage from './pp-ml.jpg';
+import mlimage from '../../assets/image/pp-ml.jpg';
 
-class FlexBoxComponent extends Component {
+class FlexBox extends Component {
   render() {
     return (
       <ScrollView>
@@ -41,4 +41,4 @@ class FlexBoxComponent extends Component {
   }
 }
 
-export default FlexBoxComponent;
+export default FlexBox;
