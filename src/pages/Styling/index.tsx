@@ -3,6 +3,7 @@ import {View, Text, Image, StyleSheet} from 'react-native';
 import mlimage from '../../assets/image/pp-ml.jpg';
 
 const Styling = () => {
+  console.log('helow');
   return (
     <View>
       <Text style={styles.text}>Styling Component</Text>
