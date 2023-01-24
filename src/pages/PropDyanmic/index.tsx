@@ -1,8 +1,11 @@
 import {View, Text, Image, ScrollView} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import Story from '../../types/story';
 
 const StoryComponent = (props: Story) => {
+  useEffect(() => {
+    console.log('didmoint');
+  }, []);
   return (
     <View style={{alignItems: 'center', marginRight: 20}}>
       <Image
@@ -11,7 +14,9 @@ const StoryComponent = (props: Story) => {
         }}
         style={{width: 100, height: 100, borderRadius: 50}}
       />
-      <Text style={{maxWidth: 80, marginTop: 10, textAlign: 'center'}}>{props.title}</Text>
+      <Text style={{maxWidth: 80, marginTop: 10, textAlign: 'center'}}>
+        {props.title}
+      </Text>
     </View>
   );
 };

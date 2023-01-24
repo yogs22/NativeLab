@@ -5,6 +5,7 @@ import Styling from './pages/Styling';
 import FlexBox from './pages/FlexBox';
 import Position from './pages/Position';
 import PropDynamic from './pages/PropDyanmic';
+import StateDynamic from './pages/StateDynamic';
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
         <Styling />
         <FlexBox />
         <Position /> */}
-        <PropDynamic />
+        {/* <PropDynamic /> */}
+        <StateDynamic />
       </ScrollView>
     </View>
   );
