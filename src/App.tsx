@@ -6,17 +6,19 @@ import FlexBox from './pages/FlexBox';
 import Position from './pages/Position';
 import PropDynamic from './pages/PropDyanmic';
 import StateDynamic from './pages/StateDynamic';
+import Communication from './pages/Communication';
 
 const App = () => {
   return (
     <View>
       <ScrollView>
-        {/* <SampleComponent />
-        <Styling />
-        <FlexBox />
-        <Position /> */}
+        {/* <SampleComponent /> */}
+        {/* <Styling /> */}
+        {/* <FlexBox /> */}
+        {/* <Position /> */}
         {/* <PropDynamic /> */}
-        <StateDynamic />
+        {/* <StateDynamic /> */}
+        <Communication />
       </ScrollView>
     </View>
   );
