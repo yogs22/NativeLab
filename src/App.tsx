@@ -8,6 +8,7 @@ import PropDynamic from './pages/PropDyanmic';
 import StateDynamic from './pages/StateDynamic';
 import Communication from './pages/Communication';
 import SVGExample from './pages/SVGExample';
+import CallAPI from './pages/CallAPI';
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
         {/* <PropDynamic /> */}
         {/* <StateDynamic /> */}
         {/* <Communication /> */}
-        <SVGExample />
+        {/* <SVGExample /> */}
+        <CallAPI />
       </ScrollView>
     </View>
   );
