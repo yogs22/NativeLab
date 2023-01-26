@@ -7,6 +7,7 @@ import Position from './pages/Position';
 import PropDynamic from './pages/PropDyanmic';
 import StateDynamic from './pages/StateDynamic';
 import Communication from './pages/Communication';
+import SVGExample from './pages/SVGExample';
 
 const App = () => {
   return (
@@ -18,7 +19,8 @@ const App = () => {
         {/* <Position /> */}
         {/* <PropDynamic /> */}
         {/* <StateDynamic /> */}
-        <Communication />
+        {/* <Communication /> */}
+        <SVGExample />
       </ScrollView>
     </View>
   );
