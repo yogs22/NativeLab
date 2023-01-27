@@ -1,14 +1,8 @@
 import React from 'react';
-import {View, ScrollView, Text} from 'react-native';
+import {Splash} from './pages';
 
 const App = () => {
-  return (
-    <View>
-      <ScrollView>
-        <Text>Hellow</Text>
-      </ScrollView>
-    </View>
-  );
+  return <Splash />;
 };
 
 export default App;
