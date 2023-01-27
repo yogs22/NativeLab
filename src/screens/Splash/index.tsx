@@ -4,7 +4,7 @@ import {LLogo} from '../../assets';
 
 const Splash = () => {
   return (
-    <View style={styles.page}>
+    <View style={styles.container}>
       <LLogo />
       <Text style={styles.text}>My Doctor</Text>
     </View>
@@ -14,7 +14,7 @@ const Splash = () => {
 export default Splash;
 
 const styles = StyleSheet.create({
-  page: {
+  container: {
     backgroundColor: 'white',
     flex: 1,
     alignItems: 'center',
@@ -25,5 +25,6 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: ' #112340',
     marginTop: 20,
+    fontFamily: 'Nunito-SemiBold',
   },
 });

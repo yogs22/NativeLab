@@ -20,9 +20,10 @@ const styles = (type?: string) =>
       borderRadius: 10,
     },
     text: {
-      fontSize: 16,
+      fontSize: 17,
       fontWeight: '600',
       textAlign: 'center',
+      fontFamily: 'Nunito-SemiBold',
       color: type === 'secondary' ? '#112340' : '#fff',
     },
   });

@@ -1,12 +1,12 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {LGetStarted, LLogo} from '../../assets';
-import {Button} from '../../components';
+import {Button, Gap} from '../../components';
 import {ImageBackground} from 'react-native';
 
 const GetStarted = () => {
   return (
-    <ImageBackground source={LGetStarted} style={styles.page}>
+    <ImageBackground source={LGetStarted} style={styles.container}>
       <View>
         <LLogo />
         <Text style={styles.title}>
@@ -15,7 +15,7 @@ const GetStarted = () => {
       </View>
       <View>
         <Button title="Get Started" />
-        <View style={styles.margin} />
+        <Gap height={16} />
         <Button type="secondary" title="Sign In" />
       </View>
     </ImageBackground>
@@ -25,7 +25,12 @@ const GetStarted = () => {
 export default GetStarted;
 
 const styles = StyleSheet.create({
-  page: {padding: 40, justifyContent: 'space-between', flex: 1},
-  title: {fontSize: 28, fontWeight: '600', color: '#fff', marginTop: 91},
-  margin: {height: 16},
+  container: {padding: 40, justifyContent: 'space-between', flex: 1},
+  title: {
+    fontSize: 28,
+    fontWeight: '600',
+    color: '#fff',
+    marginTop: 91,
+    fontFamily: 'Nunito-SemiBold',
+  },
 });
