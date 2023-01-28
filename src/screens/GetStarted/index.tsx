@@ -3,8 +3,9 @@ import React from 'react';
 import {LGetStarted, LLogo} from '../../assets';
 import {Button, Gap} from '../../components';
 import {ImageBackground} from 'react-native';
+import {Navigation} from '~/types/component';
 
-const GetStarted = () => {
+const GetStarted: React.FC<Navigation> = ({navigation}) => {
   return (
     <ImageBackground source={LGetStarted} style={styles.container}>
       <View>
@@ -14,7 +15,10 @@ const GetStarted = () => {
         </Text>
       </View>
       <View>
-        <Button title="Get Started" />
+        <Button
+          title="Get Started"
+          onPress={() => navigation.navigate('Register')}
+        />
         <Gap height={16} />
         <Button type="secondary" title="Sign In" />
       </View>

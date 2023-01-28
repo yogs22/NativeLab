@@ -1,12 +1,12 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Button as ButtonType} from '~/types/component';
 
-const Button: React.FC<ButtonType> = ({type, title}) => {
+const Button: React.FC<ButtonType> = ({type, title, onPress}) => {
   return (
-    <View style={styles(type).container}>
+    <TouchableOpacity style={styles(type).container} onPress={onPress}>
       <Text style={styles(type).text}>{title}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -24,6 +24,6 @@ const styles = (type?: string) =>
       fontWeight: '600',
       textAlign: 'center',
       fontFamily: 'Nunito-SemiBold',
-      color: type === 'secondary' ? '#112340' : '#fff',
+      color: type === 'secondary' ? '#000' : '#fff',
     },
   });

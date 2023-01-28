@@ -1,8 +1,15 @@
 import {View, Text, StyleSheet} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {LLogo} from '../../assets';
+import {Navigation} from '~/types/component';
 
-const Splash = () => {
+const Splash: React.FC<Navigation> = ({navigation}) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.replace('GetStarted');
+    }, 3000);
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
       <LLogo />
@@ -23,7 +30,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: '600',
-    color: ' #112340',
+    color: '#000',
     marginTop: 20,
     fontFamily: 'Nunito-SemiBold',
   },
