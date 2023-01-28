@@ -9,6 +9,16 @@ export interface Gap {
   height?: number;
 }
 
+export interface Input {
+  label: string;
+}
+
+export interface Link {
+  text: string;
+  size: number;
+  align: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined;
+}
+
 export interface Navigation {
   navigation: {
     replace?: any;

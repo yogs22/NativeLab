@@ -1,10 +1,14 @@
 import {View, Text} from 'react-native';
 import React from 'react';
+import {LLogo} from '~/assets';
+import Input from '~/components/atoms/Input';
 
 const Register = () => {
   return (
     <View>
-      <Text>Register</Text>
+      <LLogo />
+      <Text>Masuk dan mulai berkonsultasi</Text>
+      <Input />
     </View>
   );
 };

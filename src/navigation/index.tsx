@@ -4,7 +4,7 @@ import {Splash, GetStarted, Login, Register} from '~/screens';
 
 const Stack = createNativeStackNavigator();
 
-const Router = () => {
+const Navigation = () => {
   return (
     <Stack.Navigator initialRouteName="Splash">
       <Stack.Screen
@@ -31,4 +31,4 @@ const Router = () => {
   );
 };
 
-export default Router;
+export default Navigation;

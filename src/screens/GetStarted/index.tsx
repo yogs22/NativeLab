@@ -20,7 +20,11 @@ const GetStarted: React.FC<Navigation> = ({navigation}) => {
           onPress={() => navigation.navigate('Register')}
         />
         <Gap height={16} />
-        <Button type="secondary" title="Sign In" />
+        <Button
+          type="secondary"
+          title="Sign In"
+          onPress={() => navigation.navigate('Login')}
+        />
       </View>
     </ImageBackground>
   );
