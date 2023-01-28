@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {LGetStarted, LLogo} from '../../assets';
-import {Button, Gap} from '../../components';
+import {LGetStarted, LLogo} from '~/assets';
+import {Button, Gap} from '~/components';
 import {ImageBackground} from 'react-native';
 import {Navigation} from '~/types/component';
 

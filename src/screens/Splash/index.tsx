@@ -1,6 +1,6 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React, {useEffect} from 'react';
-import {LLogo} from '../../assets';
+import {LLogo} from '~/assets';
 import {Navigation} from '~/types/component';
 
 const Splash: React.FC<Navigation> = ({navigation}) => {
