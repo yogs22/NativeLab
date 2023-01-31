@@ -1,7 +1,7 @@
 import {View, Text, TextInput, StyleSheet} from 'react-native';
 import React from 'react';
 import {Input as InputType} from '~/types/component';
-import {colors} from '~/utils';
+import {colors, fonts} from '~/utils';
 
 const Input = ({style, keyboard, secure, label}: InputType) => {
   return (
@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.text.secondary,
     marginBottom: 6,
-    fontFamily: 'Nunito-Reguler',
+    fontFamily: fonts.primary[400],
   },
 });

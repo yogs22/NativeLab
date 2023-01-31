@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
 import {Link as LinkType, LinkStyle} from '~/types/component';
-import {colors} from '~/utils';
+import {colors, fonts} from '~/utils';
 
 const Link = ({style, text, size, align}: LinkType) => {
   return (
@@ -18,7 +18,7 @@ const styles = ({size, align}: LinkStyle) =>
     text: {
       fontSize: size,
       color: colors.text.secondary,
-      fontFamily: 'Nunito-Reguler',
+      fontFamily: fonts.primary[400],
       textDecorationLine: 'underline',
       textAlign: align,
     },

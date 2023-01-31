@@ -1,7 +1,7 @@
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Button as ButtonType} from '~/types/component';
-import {colors} from '~/utils';
+import {colors, fonts} from '~/utils';
 import IconOnly from './iconOnly';
 
 const Button = ({style, type, title, icon, onPress}: ButtonType) => {
@@ -33,7 +33,7 @@ const styles = (type?: string) =>
     text: {
       fontSize: 17,
       textAlign: 'center',
-      fontFamily: 'Nunito-SemiBold',
+      fontFamily: fonts.primary[600],
       color:
         type === 'secondary'
           ? colors.button.secondary.text

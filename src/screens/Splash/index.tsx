@@ -2,7 +2,7 @@ import {View, Text, StyleSheet} from 'react-native';
 import React, {useEffect} from 'react';
 import {LLogo} from '~/assets';
 import {Navigation} from '~/types/component';
-import {colors} from '~/utils';
+import {colors, fonts} from '~/utils';
 
 const Splash: React.FC<Navigation> = ({navigation}) => {
   useEffect(() => {
@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: colors.text.primary,
     marginTop: 20,
-    fontFamily: 'Nunito-SemiBold',
+    fontFamily: fonts.primary[600],
   },
 });
