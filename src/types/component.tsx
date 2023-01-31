@@ -47,8 +47,8 @@ export interface Input {
 }
 
 export interface LinkStyle {
-  size: number;
-  align: AlignStyle;
+  size?: number;
+  align?: AlignStyle;
 }
 
 export interface Link extends LinkStyle {

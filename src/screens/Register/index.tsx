@@ -13,7 +13,10 @@ const Register = ({navigation}: Navigation) => {
         <Input style={styles.mb24} label="Pekerjaan" />
         <Input style={styles.mb24} label="Email" />
         <Input style={styles.mb40} label="Password" />
-        <Button title="Continue" />
+        <Button
+          title="Continue"
+          onPress={() => navigation.navigate('UploadPhoto')}
+        />
       </View>
     </View>
   );
