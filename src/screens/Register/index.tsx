@@ -2,11 +2,12 @@ import {View, StyleSheet} from 'react-native';
 import React from 'react';
 import {Header, Input, Button} from '~/components';
 import {colors} from '~/utils';
+import {Navigation} from '~/types/component';
 
-const Register = () => {
+const Register = ({navigation}: Navigation) => {
   return (
     <View style={styles.page}>
-      <Header />
+      <Header title="Daftar Akun" onPress={() => navigation.goBack()} />
       <View style={styles.content}>
         <Input style={styles.mb24} label="Full Name" />
         <Input style={styles.mb24} label="Pekerjaan" />

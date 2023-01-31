@@ -1,12 +1,5 @@
 import {KeyboardTypeOptions, StyleProp, ViewStyle} from 'react-native';
 
-export interface Button {
-  style?: StyleProp<ViewStyle>;
-  type?: string;
-  title: string;
-  onPress?: () => void;
-}
-
 export type AlignStyle =
   | 'auto'
   | 'left'
@@ -14,6 +7,8 @@ export type AlignStyle =
   | 'center'
   | 'justify'
   | undefined;
+
+export type IconBackType = 'back-dark' | 'back-light';
 
 export enum KeyboardType {
   'default',
@@ -29,6 +24,14 @@ export enum KeyboardType {
   'twitter',
   'web-search',
   'visible-password',
+}
+
+export interface Button {
+  style?: StyleProp<ViewStyle>;
+  type?: string;
+  title?: string;
+  icon?: IconBackType;
+  onPress?: () => void;
 }
 
 export interface Gap {
@@ -57,5 +60,16 @@ export interface Navigation {
   navigation: {
     replace?: any;
     navigate?: any;
+    goBack?: any;
   };
+}
+
+export interface Header {
+  title: string;
+  onPress: () => void;
+}
+
+export interface IconOnly {
+  onPress?: () => void;
+  icon?: IconBackType;
 }

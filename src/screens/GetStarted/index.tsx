@@ -4,6 +4,7 @@ import {LGetStarted, LLogo} from '~/assets';
 import {Button, Gap} from '~/components';
 import {ImageBackground} from 'react-native';
 import {Navigation} from '~/types/component';
+import {colors} from '~/utils';
 
 const GetStarted: React.FC<Navigation> = ({navigation}) => {
   return (
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: '600',
-    color: '#fff',
+    color: colors.white,
     marginTop: 91,
     fontFamily: 'Nunito-SemiBold',
   },
