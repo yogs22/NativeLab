@@ -1,9 +1,7 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
 import {LLogo} from '~/assets';
-import Input from '~/components/atoms/Input';
-import Link from '~/components/atoms/Link';
-import {Button} from '~/components';
+import {Button, Link, Input} from '~/components';
 
 const Login = () => {
   return (

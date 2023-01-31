@@ -1,6 +1,7 @@
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Button as ButtonType} from '~/types/component';
+import {colors} from '~/utils';
 
 const Button: React.FC<ButtonType> = ({style, type, title, onPress}) => {
   return (
@@ -17,7 +18,10 @@ export default Button;
 const styles = (type?: string) =>
   StyleSheet.create({
     container: {
-      backgroundColor: type === 'secondary' ? '#fff' : '#0BCAD4',
+      backgroundColor:
+        type === 'secondary'
+          ? colors.button.secondary.background
+          : colors.button.primary.background,
       paddingVertical: 10,
       borderRadius: 10,
     },
@@ -26,6 +30,9 @@ const styles = (type?: string) =>
       fontWeight: '600',
       textAlign: 'center',
       fontFamily: 'Nunito-SemiBold',
-      color: type === 'secondary' ? '#000' : '#fff',
+      color:
+        type === 'secondary'
+          ? colors.button.secondary.text
+          : colors.button.primary.text,
     },
   });
