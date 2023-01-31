@@ -1,21 +1,18 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
-import {Link as LinkType} from '~/types/component';
+import {Link as LinkType, LinkStyle} from '~/types/component';
 
-const Link = ({text, size, align}: LinkType) => {
+const Link = ({style, text, size, align}: LinkType) => {
   return (
-    <View>
-      <Text style={styles(size, align).text}>{text}</Text>
+    <View style={style}>
+      <Text style={styles({size, align}).text}>{text}</Text>
     </View>
   );
 };
 
 export default Link;
 
-const styles = (
-  size: number,
-  align: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined,
-) =>
+const styles = ({size, align}: LinkStyle) =>
   StyleSheet.create({
     text: {
       fontSize: size,

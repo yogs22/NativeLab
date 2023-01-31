@@ -2,13 +2,22 @@ import {View, Text, TextInput, StyleSheet} from 'react-native';
 import React from 'react';
 import {Input as InputType} from '~/types/component';
 
-const Input: React.FC<InputType> = ({label}) => {
+const Input: React.FC<InputType> = ({style, keyboard, secure, label}) => {
   return (
-    <View>
+    <View style={style}>
       <Text style={styles.label}>{label}</Text>
-      <TextInput style={styles.input} />
+      <TextInput
+        keyboardType={keyboard}
+        secureTextEntry={secure}
+        style={styles.input}
+      />
     </View>
   );
+};
+
+Input.defaultProps = {
+  secure: false,
+  keyboard: 'default',
 };
 
 export default Input;

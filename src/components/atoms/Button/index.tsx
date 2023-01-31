@@ -1,12 +1,14 @@
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Button as ButtonType} from '~/types/component';
 
-const Button: React.FC<ButtonType> = ({type, title, onPress}) => {
+const Button: React.FC<ButtonType> = ({style, type, title, onPress}) => {
   return (
-    <TouchableOpacity style={styles(type).container} onPress={onPress}>
-      <Text style={styles(type).text}>{title}</Text>
-    </TouchableOpacity>
+    <View style={style}>
+      <TouchableOpacity style={styles(type).container} onPress={onPress}>
+        <Text style={styles(type).text}>{title}</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
