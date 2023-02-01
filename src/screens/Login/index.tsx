@@ -3,8 +3,9 @@ import React from 'react';
 import {LLogo} from '~/assets';
 import {Button, Link, Input} from '~/components';
 import {colors, fonts} from '~/utils';
+import {Navigation} from '~/types/component';
 
-const Login = () => {
+const Login = ({navigation}: Navigation) => {
   return (
     <View style={styles.container}>
       <LLogo />
@@ -21,7 +22,11 @@ const Login = () => {
         size={12}
         align="left"
       />
-      <Button style={styles.mb_xl} title="Sign In" />
+      <Button
+        style={styles.mb_xl}
+        title="Sign In"
+        onPress={navigation.replace('MainApp')}
+      />
       <Link text="Create New Account" size={16} align="center" />
     </View>
   );
