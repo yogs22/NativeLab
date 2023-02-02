@@ -1,4 +1,9 @@
-import {KeyboardTypeOptions, StyleProp, ViewStyle} from 'react-native';
+import {
+  KeyboardTypeOptions,
+  StyleProp,
+  ViewStyle,
+  ImageSourcePropType,
+} from 'react-native';
 
 export type AlignStyle =
   | 'auto'
@@ -72,4 +77,17 @@ export interface Header {
 export interface IconOnly {
   onPress?: () => void;
   icon?: IconBackType;
+}
+
+export interface ListHospital {
+  type: string;
+  name: string;
+  address: string;
+  picture: ImageSourcePropType;
+}
+
+export interface ListDoctor {
+  profile: ImageSourcePropType;
+  name: string;
+  desc: string;
 }
