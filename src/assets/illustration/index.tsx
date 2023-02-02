@@ -5,6 +5,7 @@ import LDokUmum from './ic_dokter_umum.svg';
 import LDokPsikiater from './ic_psikiater.svg';
 import LDokSpesialis from './ic_dokter_spesialis.svg';
 import LDokObat from './ic_dokter_obat.svg';
+import LHospital from './hospital.png';
 
 export {
   LLogo,
@@ -14,4 +15,5 @@ export {
   LDokPsikiater,
   LDokSpesialis,
   LDokObat,
+  LHospital,
 };
