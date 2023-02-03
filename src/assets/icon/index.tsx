@@ -8,6 +8,11 @@ import IconMessageActive from './bar/ic-message-active.svg';
 import IconHospital from './bar/ic-hospital.svg';
 import IconHospitalActive from './bar/ic-hospital-active.svg';
 import IconStar from './ic_star.svg';
+import IconNext from './ic_chevron_right.svg';
+import IconProfileAccount from './profile/ic_account.svg';
+import IconProfileHelp from './profile/ic_help.svg';
+import IconProfileRate from './profile/ic_rate.svg';
+import IconProfileLanguage from './profile/ic_language.svg';
 
 export {
   IconBack,
@@ -20,4 +25,9 @@ export {
   IconHospital,
   IconHospitalActive,
   IconStar,
+  IconNext,
+  IconProfileAccount,
+  IconProfileHelp,
+  IconProfileRate,
+  IconProfileLanguage,
 };

@@ -86,8 +86,10 @@ export interface ListHospital {
   picture: ImageSourcePropType;
 }
 
-export interface ListDoctor {
-  profile: ImageSourcePropType;
+export interface List {
+  profile?: ImageSourcePropType;
   name: string;
   desc: string;
+  icon?: string;
+  type?: 'next' | undefined;
 }

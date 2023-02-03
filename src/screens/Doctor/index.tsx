@@ -8,14 +8,15 @@ import {
   Gap,
 } from '~/components';
 import {colors, fonts} from '~/utils';
+import {Navigation} from '~/types/component';
 
-export default function Doctor() {
+export default function Doctor({navigation}: Navigation) {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.wrapperContent}>
           <Gap height={30} />
-          <HomeProfile />
+          <HomeProfile onPress={() => navigation.navigate('UserProfile')} />
           <Text style={styles.welcome}>
             Mau konsultasi dengan siapa hari ini?
           </Text>

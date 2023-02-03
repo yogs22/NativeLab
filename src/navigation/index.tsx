@@ -9,6 +9,7 @@ import {
   Doctor,
   Message,
   Hospital,
+  UserProfile,
 } from '~/screens';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigator} from '~/components';
@@ -69,6 +70,11 @@ const Navigation = () => {
       <Stack.Screen
         name="MainApp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="UserProfile"
+        component={UserProfile}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
