@@ -1,4 +1,4 @@
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
 import {Header, Input, Button} from '~/components';
 import {colors} from '~/utils';
@@ -8,7 +8,7 @@ const Register = ({navigation}: Navigation) => {
   return (
     <View style={styles.page}>
       <Header title="Daftar Akun" onPress={() => navigation.goBack()} />
-      <View style={styles.content}>
+      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         <Input style={styles.mb24} label="Full Name" />
         <Input style={styles.mb24} label="Pekerjaan" />
         <Input style={styles.mb24} label="Email" />
@@ -17,7 +17,7 @@ const Register = ({navigation}: Navigation) => {
           title="Continue"
           onPress={() => navigation.navigate('UploadPhoto')}
         />
-      </View>
+      </ScrollView>
     </View>
   );
 };
