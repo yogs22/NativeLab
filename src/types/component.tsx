@@ -13,6 +13,13 @@ export type AlignStyle =
   | 'justify'
   | undefined;
 
+export type CapitalizeType =
+  | 'none'
+  | 'sentences'
+  | 'words'
+  | 'characters'
+  | undefined;
+
 export type IconBackType = 'back-dark' | 'back-light';
 
 export enum KeyboardType {
@@ -48,6 +55,7 @@ export interface Input {
   style?: StyleProp<ViewStyle>;
   keyboard?: KeyboardTypeOptions;
   secure?: boolean;
+  autoCapitalize?: CapitalizeType;
   label: string;
 }
 
@@ -92,4 +100,10 @@ export interface List {
   desc: string;
   icon?: string;
   type?: 'next' | undefined;
+  onPress?: () => void;
+}
+
+export interface Profile {
+  name?: string;
+  desc?: string;
 }

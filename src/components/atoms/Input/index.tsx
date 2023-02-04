@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {Input as InputType} from '~/types/component';
 import {colors, fonts} from '~/utils';
 
-const Input = ({style, keyboard, secure, label}: InputType) => {
+const Input = ({style, keyboard, secure, label, autoCapitalize}: InputType) => {
   const [border, setBorder] = useState(colors.border);
   const onFocusForm = () => {
     setBorder(colors.tertiary);
@@ -17,6 +17,7 @@ const Input = ({style, keyboard, secure, label}: InputType) => {
       <TextInput
         onFocus={onFocusForm}
         onBlur={onBlurForm}
+        autoCapitalize={autoCapitalize}
         keyboardType={keyboard}
         secureTextEntry={secure}
         style={styles(border).input}

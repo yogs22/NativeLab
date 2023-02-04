@@ -10,6 +10,7 @@ import {
   Message,
   Hospital,
   UserProfile,
+  UpdateProfile,
 } from '~/screens';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigator} from '~/components';
@@ -75,6 +76,11 @@ const Navigation = () => {
       <Stack.Screen
         name="UserProfile"
         component={UserProfile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="UpdateProfile"
+        component={UpdateProfile}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

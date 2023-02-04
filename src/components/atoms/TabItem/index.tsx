@@ -43,7 +43,7 @@ const styles = (active?: string) =>
     text: {
       fontSize: 10,
       color: active ? colors.text.menuActive : colors.text.menuInactive,
-      font: fonts.primary[600],
+      fontFamily: fonts.primary[600],
       marginTop: 4,
     },
   });

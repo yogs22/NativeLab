@@ -10,7 +10,14 @@ import {
   IconProfileRate,
 } from '~/assets';
 
-export default function List({profile, name, desc, type, icon}: ListType) {
+export default function List({
+  profile,
+  name,
+  desc,
+  type,
+  icon,
+  onPress,
+}: ListType) {
   const Icon = () => {
     switch (icon) {
       case 'edit-profile':
@@ -26,7 +33,7 @@ export default function List({profile, name, desc, type, icon}: ListType) {
     }
   };
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       {icon ? <Icon /> : <Image source={profile} style={styles.avatar} />}
       <View style={styles.content}>
         <Text style={styles.name}>{name}</Text>
