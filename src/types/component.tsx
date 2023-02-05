@@ -55,6 +55,8 @@ export interface Input {
   style?: StyleProp<ViewStyle>;
   keyboard?: KeyboardTypeOptions;
   secure?: boolean;
+  value?: any;
+  onChangeText?: any;
   autoCapitalize?: CapitalizeType;
   label: string;
 }
