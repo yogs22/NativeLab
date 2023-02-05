@@ -4,12 +4,12 @@ import {DummyUser, IconRemovePhoto} from '~/assets';
 import {colors, fonts} from '~/utils';
 import {Profile as ProfileType} from '~/types/component';
 
-export default function Profile({name, desc}: ProfileType) {
+export default function Profile({name, desc, isRemove}: ProfileType) {
   return (
     <View style={styles.container}>
       <View style={styles.borderProfile}>
         <Image source={DummyUser} style={styles.avatar} />
-        <IconRemovePhoto style={styles.removePhoto} />
+        {isRemove && <IconRemovePhoto style={styles.removePhoto} />}
       </View>
       {name && (
         <View>

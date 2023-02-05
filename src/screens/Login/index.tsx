@@ -25,9 +25,14 @@ const Login = ({navigation}: Navigation) => {
       <Button
         style={styles.mb_xl}
         title="Sign In"
-        onPress={navigation.replace('MainApp')}
+        onPress={() => navigation.replace('MainApp')}
       />
-      <Link text="Create New Account" size={16} align="center" />
+      <Link
+        text="Create New Account"
+        onPress={() => navigation.navigate('Register')}
+        size={16}
+        align="center"
+      />
     </View>
   );
 };

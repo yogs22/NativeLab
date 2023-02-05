@@ -8,7 +8,7 @@ export default function UserProfile({navigation}: Navigation) {
   return (
     <View style={styles.container}>
       <Header title="Profile" onPress={() => navigation.goBack()} />
-      <Profile />
+      <Profile name="Shania Twain" desc="Product Designer" />
       <Gap height={14} />
       <List
         name="Edit Profile"

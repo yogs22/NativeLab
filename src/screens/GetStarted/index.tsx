@@ -24,7 +24,7 @@ const GetStarted: React.FC<Navigation> = ({navigation}) => {
         <Button
           type="secondary"
           title="Sign In"
-          onPress={() => navigation.navigate('Login')}
+          onPress={() => navigation.replace('Login')}
         />
       </View>
     </ImageBackground>

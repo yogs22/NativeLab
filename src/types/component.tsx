@@ -67,6 +67,7 @@ export interface LinkStyle {
 export interface Link extends LinkStyle {
   style?: StyleProp<ViewStyle>;
   text: string;
+  onPress?: () => void;
 }
 
 export interface Navigation {
@@ -106,4 +107,5 @@ export interface List {
 export interface Profile {
   name?: string;
   desc?: string;
+  isRemove?: boolean;
 }

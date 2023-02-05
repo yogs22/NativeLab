@@ -25,6 +25,7 @@ export default function UploadPhoto({navigation}: Navigation) {
             size={16}
             align="center"
             text="Skip for this"
+            onPress={() => navigation.replace('MainApp')}
           />
         </View>
       </View>
