@@ -1,11 +1,12 @@
 import {StyleSheet, Image, View, Text} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, Header, Link} from '~/components';
 import {Navigation} from '~/types/component';
-import {IconAddPhoto, LNullPhoto} from '~/assets';
+import {IconAddPhoto, IconRemovePhoto, LNullPhoto} from '~/assets';
 import {colors, fonts} from '~/utils';
 
 export default function UploadPhoto({navigation}: Navigation) {
+  const [hasPhoto, setHasPhoto] = useState(false);
   return (
     <View style={styles.page}>
       <Header title="Upload Photo" onPress={() => navigation.goBack()} />
@@ -13,13 +14,14 @@ export default function UploadPhoto({navigation}: Navigation) {
         <View style={styles.profile}>
           <View style={styles.avatarWrapper}>
             <Image source={LNullPhoto} style={styles.avatar} />
-            <IconAddPhoto style={styles.addPhoto} />
+            {hasPhoto && <IconRemovePhoto style={styles.addPhoto} />}
+            {!hasPhoto && <IconAddPhoto style={styles.addPhoto} />}
           </View>
           <Text style={styles.name}>Shania Twain</Text>
           <Text style={styles.profession}>Product Designer</Text>
         </View>
         <View>
-          <Button style={styles.mb30} title="Upload and Continue" />
+          <Button style={styles.mb30} title="Upload and Continue" disable />
           <Link
             style={styles.mb40}
             size={16}

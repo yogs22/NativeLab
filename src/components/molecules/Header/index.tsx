@@ -1,6 +1,6 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
-import {Button, Gap} from '~/components';
+import {Button, Gap} from '~/components/atoms';
 import {colors, fonts} from '~/utils';
 import {Header as HeaderType} from '~/types/component';
 

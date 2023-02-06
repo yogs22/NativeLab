@@ -4,9 +4,19 @@ import {Button as ButtonType} from '~/types/component';
 import {colors, fonts} from '~/utils';
 import IconOnly from './iconOnly';
 
-const Button = ({style, type, title, icon, onPress}: ButtonType) => {
+const Button = ({style, type, title, icon, onPress, disable}: ButtonType) => {
   if (type === 'icon-only') {
     return <IconOnly onPress={onPress} icon={icon} />;
+  }
+
+  if (disable) {
+    return (
+      <View style={style}>
+        <View style={styles().disableBg}>
+          <Text style={styles(type).disableText}>{title}</Text>
+        </View>
+      </View>
+    );
   }
 
   return (
@@ -30,6 +40,11 @@ const styles = (type?: string) =>
       paddingVertical: 10,
       borderRadius: 10,
     },
+    disableBg: {
+      backgroundColor: colors.button.disable.backgrond,
+      paddingVertical: 10,
+      borderRadius: 10,
+    },
     text: {
       fontSize: 17,
       textAlign: 'center',
@@ -38,5 +53,11 @@ const styles = (type?: string) =>
         type === 'secondary'
           ? colors.button.secondary.text
           : colors.button.primary.text,
+    },
+    disableText: {
+      fontSize: 17,
+      textAlign: 'center',
+      fontFamily: fonts.primary[600],
+      color: colors.button.disable.text,
     },
   });

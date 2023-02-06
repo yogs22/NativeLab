@@ -44,6 +44,7 @@ export interface Button {
   title?: string;
   icon?: IconBackType;
   onPress?: () => void;
+  disable?: boolean;
 }
 
 export interface Gap {
