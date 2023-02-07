@@ -1,18 +1,18 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {DummyUser, IconRemovePhoto} from '~/assets';
+import {IconRemovePhoto} from '~/assets';
 import {colors, fonts} from '~/utils';
 import {Profile as ProfileType} from '~/types/component';
 
-export default function Profile({name, desc, isRemove}: ProfileType) {
+export default function Profile({name, desc, profile, isRemove}: ProfileType) {
   return (
     <View style={styles.container}>
       <View style={styles.borderProfile}>
-        <Image source={DummyUser} style={styles.avatar} />
+        <Image source={{uri: profile}} style={styles.avatar} />
         {isRemove && <IconRemovePhoto style={styles.removePhoto} />}
       </View>
       {name && (
-        <View>
+        <View style={styles.container}>
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.profession}>{desc}</Text>
         </View>

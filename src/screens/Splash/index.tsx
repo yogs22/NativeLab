@@ -2,13 +2,33 @@ import {View, Text, StyleSheet} from 'react-native';
 import React, {useEffect} from 'react';
 import {LLogo} from '~/assets';
 import {Navigation} from '~/types/component';
-import {colors, fonts} from '~/utils';
+import {colors, fonts, getData} from '~/utils';
+import axios from 'axios';
+import Const from '~/config/const';
 
 const Splash: React.FC<Navigation> = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('GetStarted');
-    }, 3000);
+      getData('token').then(async res => {
+        if (res) {
+          console.log(res);
+          const response = await axios.get(`${Const.API_URL}/auth/me`, {
+            headers: {
+              Authorization: `Bearer ${res}`,
+            },
+          });
+          console.log(response);
+          if (response.data.code === 200) {
+            console.log(response);
+            navigation.replace('MainApp');
+          } else {
+            navigation.replace('GetStarted');
+          }
+        } else {
+          navigation.replace('GetStarted');
+        }
+      });
+    }, 2000);
   }, [navigation]);
 
   return (

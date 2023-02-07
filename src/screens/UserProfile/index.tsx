@@ -1,14 +1,28 @@
 import {StyleSheet, View} from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Gap, Header, List, Profile} from '~/components';
-import {colors} from '~/utils';
+import {colors, getData} from '~/utils';
 import {Navigation} from '~/types/component';
 
 export default function UserProfile({navigation}: Navigation) {
+  const [profile, setProfile] = useState({
+    name: '',
+    email: '',
+    picture_url: '',
+  });
+  useEffect(() => {
+    getData('user').then(res => {
+      setProfile(res);
+    });
+  });
   return (
     <View style={styles.container}>
-      <Header title="Profile" onPress={() => navigation.goBack()} />
-      <Profile name="Shania Twain" desc="Product Designer" />
+      <Header title="User Profile" onPress={() => navigation.goBack()} />
+      <Profile
+        name={profile.name}
+        profile={profile.picture_url}
+        desc={profile.email}
+      />
       <Gap height={14} />
       <List
         name="Edit Profile"

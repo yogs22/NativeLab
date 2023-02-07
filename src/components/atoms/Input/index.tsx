@@ -11,6 +11,8 @@ const Input = ({
   secure,
   label,
   autoCapitalize,
+  disable,
+  numberOfLines,
 }: InputType) => {
   const [border, setBorder] = useState(colors.border);
   const onFocusForm = () => {
@@ -28,9 +30,13 @@ const Input = ({
         autoCapitalize={autoCapitalize}
         keyboardType={keyboard}
         secureTextEntry={secure}
-        style={styles(border).input}
+        style={styles(border, numberOfLines).input}
         value={value}
         onChangeText={onChangeText}
+        editable={!disable}
+        selectTextOnFocus={!disable}
+        multiline={numberOfLines ? true : false}
+        numberOfLines={numberOfLines}
       />
     </View>
   );
@@ -43,13 +49,14 @@ Input.defaultProps = {
 
 export default Input;
 
-const styles = (border?: string) =>
+const styles = (border?: string, numberOfLines?: number) =>
   StyleSheet.create({
     input: {
       borderWidth: 1,
       borderColor: border,
       borderRadius: 10,
       padding: 12,
+      textAlignVertical: numberOfLines ? 'top' : 'center',
     },
     label: {
       fontSize: 16,

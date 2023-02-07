@@ -60,6 +60,8 @@ export interface Input {
   onChangeText?: any;
   autoCapitalize?: CapitalizeType;
   label: string;
+  disable?: boolean;
+  numberOfLines?: number;
 }
 
 export interface LinkStyle {
@@ -109,6 +111,7 @@ export interface List {
 
 export interface Profile {
   name?: string;
+  profile?: string;
   desc?: string;
   isRemove?: boolean;
 }
