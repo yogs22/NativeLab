@@ -11,19 +11,18 @@ const Splash: React.FC<Navigation> = ({navigation}) => {
     setTimeout(() => {
       getData('token').then(async res => {
         if (res) {
-          console.log(res);
-          const response = await axios.get(`${Const.API_URL}/auth/me`, {
-            headers: {
-              Authorization: `Bearer ${res}`,
-            },
-          });
-          console.log(response);
-          if (response.data.code === 200) {
-            console.log(response);
-            navigation.replace('MainApp');
-          } else {
-            navigation.replace('GetStarted');
-          }
+          await axios
+            .get(`${Const.API_URL}/auth/me`, {
+              headers: {
+                Authorization: `Bearer ${res}`,
+              },
+            })
+            .then(() => {
+              navigation.replace('MainApp');
+            })
+            .catch(() => {
+              navigation.replace('GetStarted');
+            });
         } else {
           navigation.replace('GetStarted');
         }

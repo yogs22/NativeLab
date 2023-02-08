@@ -115,3 +115,7 @@ export interface Profile {
   desc?: string;
   isRemove?: boolean;
 }
+
+export interface GlobalState {
+  loading: boolean;
+}
