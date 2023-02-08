@@ -1,5 +1,5 @@
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   NewsItem,
   RatedDoctor,
@@ -7,10 +7,30 @@ import {
   HomeProfile,
   Gap,
 } from '~/components';
-import {colors, fonts} from '~/utils';
-import {Navigation} from '~/types/component';
+import {colors, fonts, getData} from '~/utils';
+import {Navigation, NewsItem as NewsItemType, Product} from '~/types/component';
+import axios from 'axios';
+import Const from '~/config/const';
 
 export default function Doctor({navigation}: Navigation) {
+  const [news, setNews] = useState([]);
+  const [token, setToken] = useState('');
+  useEffect(() => {
+    getData('token').then(res => {
+      setToken(res);
+    });
+  });
+  useEffect(() => {
+    axios
+      .get(`${Const.API_URL}/product?category_slug=game`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(response => {
+        setNews(response.data.payload);
+      });
+  }, [token]);
   return (
     <View style={styles.container}>
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
@@ -40,8 +60,15 @@ export default function Doctor({navigation}: Navigation) {
           <RatedDoctor />
           <Text style={styles.sectionLabel}>Good News</Text>
         </View>
-        <NewsItem />
-        <NewsItem />
+        {news.map((item: Product) => {
+          return (
+            <NewsItem
+              title={item.name}
+              date={item.status}
+              image={item.picture_url}
+            />
+          );
+        })}
         <Gap height={30} />
       </ScrollView>
     </View>

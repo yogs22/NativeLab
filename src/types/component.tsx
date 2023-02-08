@@ -119,3 +119,15 @@ export interface Profile {
 export interface GlobalState {
   loading: boolean;
 }
+
+export interface NewsItem {
+  title: string;
+  date: string;
+  image: ImageSourcePropType;
+}
+
+export interface Product {
+  name: string;
+  status: string;
+  picture_url: ImageSourcePropType;
+}
