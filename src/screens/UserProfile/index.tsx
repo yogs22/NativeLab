@@ -3,6 +3,9 @@ import React, {useEffect, useState} from 'react';
 import {Gap, Header, List, Profile} from '~/components';
 import {colors, getData} from '~/utils';
 import {Navigation} from '~/types/component';
+import axios from 'axios';
+import {showMessage} from 'react-native-flash-message';
+import Const from '~/config/const';
 
 export default function UserProfile({navigation}: Navigation) {
   const [profile, setProfile] = useState({
@@ -10,11 +13,40 @@ export default function UserProfile({navigation}: Navigation) {
     email: '',
     picture_url: '',
   });
+
+  const [token, setToken] = useState('');
+
   useEffect(() => {
     getData('user').then(res => {
       setProfile(res);
     });
+    getData('token').then(res => {
+      setToken(res);
+    });
   });
+
+  const signOut = () => {
+    axios
+      .post(
+        `${Const.API_URL}/auth/logout`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
+      .then(() => {
+        navigation.replace('GetStarted');
+      })
+      .catch(error => {
+        showMessage({
+          message: 'Error!!',
+          type: 'danger',
+        });
+        console.log(error);
+      });
+  };
   return (
     <View style={styles.container}>
       <Header title="User Profile" onPress={() => navigation.goBack()} />
@@ -44,10 +76,11 @@ export default function UserProfile({navigation}: Navigation) {
         icon="rate"
       />
       <List
-        name="Help Center"
-        desc="Read our guidlines"
+        name="Sign Out"
+        desc="Logout from account"
         type="next"
         icon="help"
+        onPress={signOut}
       />
     </View>
   );
